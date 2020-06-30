@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
     List<ListData> l = [];
     for (int i = 0; i < ListData.titles.length; i++) {
       l.add(new ListData(
-          ListData.titles[i], ListData.subTitles[i], ListData.icons[i]));
+          ListData.titles[i], ListData.subTitles[i], ListData.icons[i],ListData.widgets[i]));
     }
     return l;
   }

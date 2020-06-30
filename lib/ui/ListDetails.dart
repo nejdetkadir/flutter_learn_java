@@ -14,7 +14,7 @@ class _ListDetails extends State<ListDetails> {
   @override
   void initState() {
     super.initState();
-    data = new ListData(ListData.titles[widget.position], ListData.subTitles[widget.position], ListData.icons[widget.position]);
+    data = new ListData(ListData.titles[widget.position], ListData.subTitles[widget.position], ListData.icons[widget.position],ListData.widgets[widget.position]);
 
   }
 
@@ -26,11 +26,7 @@ class _ListDetails extends State<ListDetails> {
           data.title
         ),
       ),
-      body: Center(
-        child: Text(
-          data.title
-        ),
-      ),
+      body: data.widget,
     );
   }
 }
