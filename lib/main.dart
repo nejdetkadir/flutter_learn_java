@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'ListData.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -21,11 +23,21 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  List<ListData> listData = setListData();
+
+  static List<ListData> setListData() {
+    List<ListData> l = [];
+    for (int i = 0; i < ListData.titles.length; i++) {
+      l.add(new ListData(ListData.titles[i], ListData.subTitles[i], ListData.icons[i]));
+    }
+    return l;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Title"),
+        title: Text("Java Öğreniyorum"),
       ),
       drawer: Drawer(
         child: ListView(
@@ -45,22 +57,37 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             ListTile(
               leading: Icon(Icons.home),
-              title: Text(
-                "Home"
-              ),
+              title: Text("ANASAYFA"),
             )
           ],
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Body',
+      body: ListView.builder(
+        itemBuilder: (BuildContext context, int position) {
+          return Card(
+            elevation: 4,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: ListTile(
+                onTap: () {
+                  print('tıklanan öğe => ${listData[position].title}');
+                },
+                leading:
+                  listData[position].icon,
+                title: Text(
+                    listData[position].title
+                ),
+                subtitle: Text(
+                  listData[position].subTitle,
+                ),
+                trailing: Icon(
+                  Icons.arrow_forward_ios
+                ),
+              ),
             ),
-          ],
-        ),
+          );
+        },
+        itemCount: listData.length,
       ),
     );
   }
