@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'ListData.dart';
+import 'data/ListData.dart';
 
 void main() {
   runApp(MyApp());
@@ -81,7 +81,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   listData[position].subTitle,
                 ),
                 trailing: Icon(
-                  Icons.arrow_forward_ios
+                  Icons.arrow_forward_ios,
+                  color: Colors.cyan,
                 ),
               ),
             ),
