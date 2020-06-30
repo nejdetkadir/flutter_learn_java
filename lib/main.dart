@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learn_java/ui/ListDetails.dart';
 
 import 'data/ListData.dart';
 
@@ -12,6 +13,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      onGenerateRoute: (RouteSettings settings) {
+        List<String> path = settings.name.split("/");
+        if (path[1] == "listDetails") {
+          return MaterialPageRoute(
+              builder: (context) => ListDetails(int.parse(path[2])));
+        } else {
+          return null;
+        }
+      },
       home: MyHomePage(),
     );
   }
@@ -28,7 +38,8 @@ class _MyHomePageState extends State<MyHomePage> {
   static List<ListData> setListData() {
     List<ListData> l = [];
     for (int i = 0; i < ListData.titles.length; i++) {
-      l.add(new ListData(ListData.titles[i], ListData.subTitles[i], ListData.icons[i]));
+      l.add(new ListData(
+          ListData.titles[i], ListData.subTitles[i], ListData.icons[i]));
     }
     return l;
   }
@@ -37,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Java Öğreniyorum"),
+        title: Text("JAVA ÖĞRENİYORUM"),
       ),
       drawer: Drawer(
         child: ListView(
@@ -69,14 +80,10 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: ListTile(
-                onTap: () {
-                  print('tıklanan öğe => ${listData[position].title}');
-                },
-                leading:
-                  listData[position].icon,
-                title: Text(
-                    listData[position].title
-                ),
+                onTap: () =>
+                    Navigator.pushNamed(context, "/listDetails/${position}"),
+                leading: listData[position].icon,
+                title: Text(listData[position].title),
                 subtitle: Text(
                   listData[position].subTitle,
                 ),
