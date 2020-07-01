@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ListData {
   String title;
@@ -135,6 +136,14 @@ class ListData {
       color: Colors.cyan,
     ),
   ];
+
+  static _launchURL(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
 
   static List<Widget> widgets = [
     CustomScrollView(
@@ -368,7 +377,7 @@ class ListData {
                   elevation: 4,
                   child: ListTile(
                     title: Text(
-                        "Sadece 5 adet değişken tipi yoktur. JAVA'da değişkenler İlkel Tipler (Primitive) ve Referans Tipler olarak iki ana başlık altında toplanır. Şimdi ilkel veri tiplerini öğrenelelim"),
+                        "Sadece 5 adet değişken tipi yoktur. JAVA'da değişkenler İlkel Tipler (Primitive) ve Referans Tipler olarak iki ana başlık altında toplanır. Şimdi ilkel veri tiplerini öğrenelim."),
                     leading: Icon(
                       Icons.info,
                       color: Colors.blue,
@@ -466,7 +475,7 @@ class ListData {
                   elevation: 4,
                   child: ListTile(
                     title: Text(
-                        "Üstte yapmış olduğumuz değişken atama işleminde herhangi bir yanlışlık bulunmamaktır. İlk satırda kullaniciAdi değişkenimiz, oluşturduk ve atama işlemi yapmadık. Program bu satırı okurken bu değişkene herhangi bir değer atanmadığı için java bu değişkene daha sonra değer girilecek diye varsaydığından herhangi bir hata almayız. Fakat programın ilerleyen satırlarında "),
+                        "Üstte yapmış olduğumuz değişken atama işleminde herhangi bir yanlışlık bulunmamaktır. İlk satırda kullaniciAdi değişkenimiz, oluşturduk ve atama işlemi yapmadık. Program bu satırı okurken bu değişkene herhangi bir değer atanmadığı için java bu değişkene daha sonra değer girilecek diye varsaydığından herhangi bir hata almayız."),
                     leading: Icon(
                       Icons.info,
                       color: Colors.blue,
@@ -484,7 +493,8 @@ class ListData {
                       letterSpacing: 1,
                       wordSpacing: 2),
                 ),
-              ),              Padding(
+              ),
+              Padding(
                 padding: EdgeInsets.all(30),
                 child: Card(
                   elevation: 4,
@@ -498,13 +508,123 @@ class ListData {
                   ),
                 ),
               ),
+              Padding(
+                padding: EdgeInsets.all(30),
+                child: MaterialButton(
+                  onPressed: () {
+                    _launchURL(
+                        "https://github.com/nejdetkadir/learn-JAVA/blob/master/src/Degiskenler.java");
+                  },
+                  color: Colors.green,
+                  child: Text(
+                    "DAHA FAZLA ÖRNEK",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              )
             ],
           ),
         )
       ],
     ),
-    Column(
-      children: [Image.asset("images/java.png")],
+    CustomScrollView(
+      primary: true,
+      slivers: <Widget>[
+        SliverToBoxAdapter(
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.all(30),
+                child: Card(
+                  elevation: 4,
+                  child: ListTile(
+                    title: Text(
+                        "Operatörler değişkenlerimiz üzerinde işlemler yapmamıza yarar. Aşağıdaki tablolara göz attıktan sonra sayfanın altında bulunan butona basarak bu konuda hakkında daha fazla örnek görebilirsiniz."),
+                    leading: Icon(
+                      Icons.info,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 35, bottom: 10),
+                child: Center(
+                  child: Text(
+                    "ARİTMETİK OPERATÖRLER",
+                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 23),
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(5),
+                child: Image.asset(
+                  "images/operatorler-aritmetik.png",
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 35, bottom: 10),
+                child: Center(
+                  child: Text(
+                    "ATAMA OPERATÖRLERİ",
+                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 23),
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(5),
+                child: Image.asset(
+                  "images/operatorler-atama.png",
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 35, bottom: 10),
+                child: Center(
+                  child: Text(
+                    "KARŞILAŞTIRMA OPERATÖRLERİ",
+                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 23),
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(5),
+                child: Image.asset(
+                  "images/operatorler-karsilastirma.png",
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 35, bottom: 10),
+                child: Center(
+                  child: Text(
+                    "MANTIKSAL OPERATÖRLER",
+                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 23),
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(5),
+                child: Image.asset(
+                  "images/operatorler-mantiksal.png",
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(30),
+                child: MaterialButton(
+                  onPressed: () {
+                    _launchURL(
+                        "https://github.com/nejdetkadir/learn-JAVA/blob/master/src/Operatorler.java");
+                  },
+                  color: Colors.green,
+                  child: Text(
+                    "DAHA FAZLA ÖRNEK",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     ),
     Column(
       children: [Image.asset("images/java.png")],
