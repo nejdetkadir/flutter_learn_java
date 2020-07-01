@@ -137,12 +137,11 @@ class ListData {
   ];
 
   static List<Widget> widgets = [
-
     CustomScrollView(
       primary: true,
       slivers: <Widget>[
         SliverToBoxAdapter(
-          child:     Column(
+          child: Column(
             children: [
               Center(
                 child: Container(
@@ -170,8 +169,7 @@ class ListData {
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
                       letterSpacing: 1,
-                      wordSpacing: 2
-                  ),
+                      wordSpacing: 2),
                 ),
               ),
               Container(
@@ -190,8 +188,7 @@ class ListData {
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
                       letterSpacing: 1,
-                      wordSpacing: 2
-                  ),
+                      wordSpacing: 2),
                 ),
               ),
               Container(
@@ -210,8 +207,7 @@ class ListData {
                   style: TextStyle(
                       fontWeight: FontWeight.w400,
                       letterSpacing: 1,
-                      wordSpacing: 2
-                  ),
+                      wordSpacing: 2),
                 ),
               )
             ],
@@ -219,8 +215,293 @@ class ListData {
         )
       ],
     ),
-    Column(
-      children: [Image.asset("images/java.png")],
+    CustomScrollView(
+      primary: true,
+      slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 35, bottom: 10),
+                child: Center(
+                  child: Text(
+                    "DEĞİŞKEN NEDİR?",
+                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 27),
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(30),
+                child: Text(
+                  'Yazdığımız uygulamalarda, projelerde kimi zaman bir sayıyı, kimi zaman bir isimi, haftanın günlerini, Türkiye’nin illerini, kayıt olan kişinin soyadını yapılan işleme ve amaca göre geçici bir süreliğine hafızada tutmak isteyebiliriz.\nÖrnek olarak bir uygulama hayal edelim. Kullanıcı doğduğu yılı giriyor ve program kaç yaşında olduğunu hesaplıyor. Program burada hesaplama yapmak için şu anda bulunduğumuz yıldan kullanıcın girmiş olduğu yılı çıkaracak, yani program bir çıkarma işlemi yapacak, fakat kullanıcının girdiği sayıyı program nerde tutacak? tabiki de RAM\'de. Biz bu veriye ulaşmak için kullanıcının girdiği veriyi bir değişkene aktararak yazdığımız programın ilerleyen evrelerinde bu veri ile istediğimiz işlemi kolayca yapabiliriz.\n\nPeki JAVA\'da hangi değişken tipleri vardır?',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      letterSpacing: 1,
+                      wordSpacing: 2),
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 30, bottom: 15, right: 30),
+                child: Column(
+                  children: [
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      child: RichText(
+                        text: TextSpan(children: <TextSpan>[
+                          TextSpan(
+                            text: 'String : ',
+                            style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.w500,
+                                letterSpacing: 1,
+                                wordSpacing: 2),
+                          ),
+                          TextSpan(
+                              text:
+                                  '"Merhaba" gibi metinsel ifadeleri depolar ve atama yaparken çift tırnak içinde yazılır.',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                  letterSpacing: 1,
+                                  wordSpacing: 2)),
+                        ]),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 15),
+                      child: RichText(
+                        text: TextSpan(children: <TextSpan>[
+                          TextSpan(
+                            text: 'int : ',
+                            style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.w500,
+                                letterSpacing: 1,
+                                wordSpacing: 2),
+                          ),
+                          TextSpan(
+                              text:
+                                  '1, 99, -45 gibi negatif veya pozitif farketmeksizin tamsayıları depolayan bir değişken türüdür.',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                  letterSpacing: 1,
+                                  wordSpacing: 2)),
+                        ]),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 15),
+                      child: RichText(
+                        text: TextSpan(children: <TextSpan>[
+                          TextSpan(
+                            text: 'float : ',
+                            style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.w500,
+                                letterSpacing: 1,
+                                wordSpacing: 2),
+                          ),
+                          TextSpan(
+                              text:
+                                  '25,12 veya -23,12 gibi negatif veya pozitif farketmeksizin ondalıklı sayıları depolayan bir değişken türüdür.',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                  letterSpacing: 1,
+                                  wordSpacing: 2)),
+                        ]),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 15),
+                      child: RichText(
+                        text: TextSpan(children: <TextSpan>[
+                          TextSpan(
+                            text: 'char : ',
+                            style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.w500,
+                                letterSpacing: 1,
+                                wordSpacing: 2),
+                          ),
+                          TextSpan(
+                              text:
+                                  'a veya B gibi tek bir karakteri depolar ve tek tırnak içinde tanımlanır.',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                  letterSpacing: 1,
+                                  wordSpacing: 2)),
+                        ]),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 15),
+                      child: RichText(
+                        text: TextSpan(children: <TextSpan>[
+                          TextSpan(
+                            text: 'boolean : ',
+                            style: TextStyle(
+                                color: Colors.red,
+                                fontWeight: FontWeight.w500,
+                                letterSpacing: 1,
+                                wordSpacing: 2),
+                          ),
+                          TextSpan(
+                              text:
+                                  'İki farklı durumu depolarlar. true yada false değerini alırlar.',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                  letterSpacing: 1,
+                                  wordSpacing: 2)),
+                        ]),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(30),
+                child: Card(
+                  elevation: 4,
+                  child: ListTile(
+                    title: Text(
+                        "Sadece 5 adet değişken tipi yoktur. JAVA'da değişkenler İlkel Tipler (Primitive) ve Referans Tipler olarak iki ana başlık altında toplanır. Şimdi ilkel veri tiplerini öğrenelelim"),
+                    leading: Icon(
+                      Icons.info,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(5),
+                child: Image.asset(
+                  "images/degiskenler-ilkel-tipler.png",
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(30),
+                child: Card(
+                  elevation: 4,
+                  child: ListTile(
+                    title: Text(
+                        "Şimdi ise referans tipleri öğrenelim. Temelde 3 tane referans tip vardır. Bu 3 temel tip kendi altlarında farklı tipler barındırır."),
+                    leading: Icon(
+                      Icons.info,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.all(5),
+                child: Image.asset(
+                  "images/degiskenler-referans-tipler.png",
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 35, bottom: 10),
+                child: Center(
+                  child: Text(
+                    "DEĞİŞKEN NASIL TANIMLANIR?",
+                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 23),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(30),
+                child: Card(
+                  elevation: 4,
+                  child: ListTile(
+                    title: Text("değişkentipi değişkenadı = değer;"),
+                    leading: Icon(
+                      Icons.info,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.all(30),
+                child: Text(
+                  'Az önce öğrendiğimiz değişken tipleriyle örnek değişkenler tanımlayalım.\n\nString isim = "Nejdet Kadir";\nString website = "www.nejdetkadirbektas.com";\n\nint yas = 20;\nint rastgeleSayi = -200;\n\nfloat benimDegiskenim = 2.99f;\nfloat seninDegiskenin = -74.1;\n\nchar basHarf =\'Ş\';\nchar sonHarf =\'l\';\n\nboolean bekarlikDurumu = true;\nguzelSesliMi = false;',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      letterSpacing: 1,
+                      wordSpacing: 2),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(30),
+                child: Card(
+                  elevation: 4,
+                  child: ListTile(
+                    title: Text(
+                        "Farkettiğiniz gibi değişkenlerimize isim verirken herhangi bir türkçe karakter (Örn: ş,ı,ü,ç,ö) kullanmadık. Kullandığımızda hata almasak bile progralamada bu doğru karşılanan bir durum değildir. Hatta değişken isimlerimizi ingilizce kullanmak kendimizi geliştirmemize katkıda bulunur. Bu durum kodlarınız yabancılar tarafından da okunmasını kolaylaştırır. Ne de olsa yazılımın ana dili İngilizcedir."),
+                    leading: Icon(
+                      Icons.info,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.all(30),
+                child: Text(
+                  'String kullaniciAdi;\nkullaniciAdi; = "Fatih"\n\nint kacYilindayiz;\nkacYilindayiz = 2020;',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      letterSpacing: 1,
+                      wordSpacing: 2),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(30),
+                child: Card(
+                  elevation: 4,
+                  child: ListTile(
+                    title: Text(
+                        "Üstte yapmış olduğumuz değişken atama işleminde herhangi bir yanlışlık bulunmamaktır. İlk satırda kullaniciAdi değişkenimiz, oluşturduk ve atama işlemi yapmadık. Program bu satırı okurken bu değişkene herhangi bir değer atanmadığı için java bu değişkene daha sonra değer girilecek diye varsaydığından herhangi bir hata almayız. Fakat programın ilerleyen satırlarında "),
+                    leading: Icon(
+                      Icons.info,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                alignment: Alignment.centerLeft,
+                padding: EdgeInsets.all(30),
+                child: Text(
+                  'final boolean iyiMisin = true;',
+                  style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      letterSpacing: 1,
+                      wordSpacing: 2),
+                ),
+              ),              Padding(
+                padding: EdgeInsets.all(30),
+                child: Card(
+                  elevation: 4,
+                  child: ListTile(
+                    title: Text(
+                        "Değişkenlerimizi final olarak belirtmek, bu değişkenimizin değerini değiştirmeden saklayacağımız anlamına gelmektedir. Programımızın ilerleyen satırlarında bu değişkenin değerini false yapmaya çalışırsak hata alırız. İçindeki değerin değişmesini istemediğimiz değişkenleri final olarak tanımlamalıyız."),
+                    leading: Icon(
+                      Icons.info,
+                      color: Colors.blue,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        )
+      ],
     ),
     Column(
       children: [Image.asset("images/java.png")],
